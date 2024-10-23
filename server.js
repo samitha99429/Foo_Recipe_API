@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const recipeRoutes = require('./routes/recipeRoutes');
-const cors = require('cors');
+// const cors = require('cors');
 
 // Load environment variables
 dotenv.config();
@@ -37,7 +37,7 @@ app.use(cors({
 app.use(express.json());
 
 // Manually handle preflight requests if necessary
-app.options('*', cors()); 
+// app.options('*', cors()); 
 
 // Route definitions
 app.use('/api/auth', authRoutes);
