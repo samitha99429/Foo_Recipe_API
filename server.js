@@ -13,7 +13,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: ['https://food-recipe-client.vercel.app/'], 
+  origin: ['https://food-recipe-client-38kigbhwn-samithas-projects-66fa87b4.vercel.app'], 
   methods: ['GET', 'POST', 'DELETE', 'OPTIONS'], 
   credentials: true, 
 }));
