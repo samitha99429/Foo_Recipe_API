@@ -13,6 +13,16 @@ connectDB();
 
 const app = express();
 
+
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions));
+
 // Set up CORS
 app.use(cors({
   origin: ['https://food-recipe-client-dfjrgg2qf-samithas-projects-66fa87b4.vercel.app'], // Allow your client URL
@@ -20,6 +30,8 @@ app.use(cors({
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'], // Include allowed headers
 }));
+
+
 
 // Middleware for parsing JSON requests
 app.use(express.json());
