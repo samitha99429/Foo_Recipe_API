@@ -11,6 +11,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
+
 app.use(cors({
   origin: ['https://food-recipe-client.vercel.app/'], 
   methods: ['GET', 'POST', 'DELETE', 'OPTIONS'], 
