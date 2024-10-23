@@ -20,11 +20,12 @@ app.use(cors({
   credentials: true,
 }));
 
+app.options('*', cors()); 
 // Middleware for parsing JSON requests
 app.use(express.json());
 
 // Manually handle preflight requests if necessary
-app.options('*', cors());  // Preflight response for all routes
+ // Preflight response for all routes
 
 // Route definitions
 app.use('/api/auth', authRoutes);
