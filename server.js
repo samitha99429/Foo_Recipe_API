@@ -16,7 +16,7 @@ const app = express();
 // Set up CORS
 app.use(cors({
   origin: ['https://food-recipe-client-kodu1onyf-samithas-projects-66fa87b4.vercel.app'], // Allow your client
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS for preflight
+  methods: ['GET', 'POST', 'DELETE', 'OPTIONS'], // Include OPTIONS for preflight
   credentials: true,
 }));
 
