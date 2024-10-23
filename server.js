@@ -15,17 +15,17 @@ const app = express();
 
 // Set up CORS
 app.use(cors({
-  origin: ['https://food-recipe-client-fru5lhke5-samithas-projects-66fa87b4.vercel.app/'], // Allow your client
-  methods: ['GET', 'POST', 'DELETE', 'OPTIONS'], // Include OPTIONS for preflight
+  origin: ['https://food-recipe-client-dfjrgg2qf-samithas-projects-66fa87b4.vercel.app'], // Allow your client URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow OPTIONS for preflight
   credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'], // Include allowed headers
 }));
 
-app.options('*', cors()); 
 // Middleware for parsing JSON requests
 app.use(express.json());
 
 // Manually handle preflight requests if necessary
- // Preflight response for all routes
+app.options('*', cors()); 
 
 // Route definitions
 app.use('/api/auth', authRoutes);
