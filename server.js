@@ -5,33 +5,25 @@ const authRoutes = require('./routes/authRoutes');
 const recipeRoutes = require('./routes/recipeRoutes');
 const cors = require('cors');
 
-// Load environment variables
 dotenv.config();
 
 // Connect to MongoDB
 connectDB();
 
 const app = express();
-
-// Set up CORS
 app.use(cors({
-  origin: ['https://food-recipe-client-kodu1onyf-samithas-projects-66fa87b4.vercel.app'], // Allow your client
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS for preflight
+  origin: ['https://food-recipe-1g9dwcsz0-samithas-projects-66fa87b4.vercel.app/?vercelToolbarCode=Pfbm17zQ7e8ufcu'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
-
-// Middleware for parsing JSON requests
 app.use(express.json());
 
-// Manually handle preflight requests if necessary
-app.options('*', cors());  // Preflight response for all routes
-
-// Route definitions
+// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/recipes', recipeRoutes);
 
-// Start the server
 const PORT = process.env.PORT || 3001;
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
